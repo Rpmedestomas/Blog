@@ -19,6 +19,9 @@
             </div>
         </nav>
         <div class="content">
+            <p class="title is-7">
+                By <%= User.find(@post.user_id).email %>
+            </p>
             <%= @post.content%>
         </div>
         <div class=" section comment">

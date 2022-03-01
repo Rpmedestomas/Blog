@@ -1,4 +1,4 @@
-<% content_for :page_title, "Index"%>
+<% content_for :page_title, "Posts"%>
 
 <div class="section">
     <div class="container">
@@ -10,6 +10,9 @@
                             <p class="title is-4">
                                 <%= link_to post.title, post %>
                             </p>
+                            <p class="title is-7">
+                                By <%= User.find(post.user_id).email %>
+                            </p>
                         </div>
                     </div>
                     <div class="content">
@@ -17,7 +20,7 @@
                     </div>
                     <div class="comment-count">
                         <span class="tag is-rounded">
-                            <%= post.content %>
+                            <%= post.comments.count %>
                         </span>
                     </div>
                 </div>
